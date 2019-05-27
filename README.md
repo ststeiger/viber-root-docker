@@ -17,7 +17,12 @@ docker build -t viber_root:0.1 .
 ## Run image:
 ```
 xhost +
-sudo docker run -it -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -t viber_root:0.1
+sudo docker run --name viber -it -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -t viber_root:0.1
+```
+
+## Run container from image:
+```
+docker run --name viber -d viber_root:0.1 
 ```
 
 
